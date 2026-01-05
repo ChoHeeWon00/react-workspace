@@ -12,7 +12,7 @@ function Site({arr, a_tag}){
    */
    a_tag.forEach( v => {
         //console.log( v );//{}
-        li = li.concat(<li><a href={v.href}>{v.txt}</a></li>)
+        li = li.concat(<li key={v.href}><a href={v.href}>{v.txt}</a></li>)
         //li.push(<li><a href={v.href}>{v.txt}</a></li>)
    });
 
@@ -22,7 +22,7 @@ function Site({arr, a_tag}){
                                 <a href={value.href}>{value.txt}</a>);
 
     return (<>
-        <div>{ a_tag.map(value => 
+        <div>{ a_tag.map((value, index) => 
                 <a href={value.href}>{value.txt}</a>) }</div>
         <hr></hr>
         <div>{testTag}</div>

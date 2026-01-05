@@ -1,5 +1,9 @@
 //src -> StateTest01.js"
 
+
+//src -> components : 화면에 보여지는 기능
+//src -> containers : 연산을 담당하는 기능 
+
 import { useState } from "react";
 function StateTest01(){
     const [num , setNum ] = useState(0)

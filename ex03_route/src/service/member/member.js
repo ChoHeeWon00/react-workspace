@@ -11,5 +11,15 @@ let data = [
 const getData = () => {
     return data;
 };
+const memberDelete = ( id ) => {
+    //console.log("delete : ", id ) aaa
+    //console.log("delete 전 data : ", data )
+    data = data.filter( mem => mem.id !== id )
+    //console.log("delete 후 data : ", data )
+}
+export const getOne = ( id ) => {
+    //[{}]
+    return data.filter( mem => mem.id === id )[0]
+}
 //const getData = () => data;
-export { getData };
+export { getData , memberDelete };

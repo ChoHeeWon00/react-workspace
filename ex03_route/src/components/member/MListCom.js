@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom"
-function MListCom( { list } ){
+function MListCom( { list , onDelete } ){
     const navigate = useNavigate();
     const indexBtn = () => navigate("/");
     const beforeBtn = () => navigate(-1);
 
-    if(list.length !== 0 )
-        console.log("list 0 : ", list[0])
+    //if(list.length !== 0 )
+      //  console.log("list 0 : ", list[0])
     //list = [{},{},{}]
     return (<>
         
@@ -13,8 +13,13 @@ function MListCom( { list } ){
             <div key={data.id}>
                 <span>{data.id}</span>,
                 <span>{data.pwd}</span>,
-                <span>{data.name}</span>,
+                <span>
+                    <Link to={"/member/one?id=" + data.id}>
+                        {data.name}
+                    </Link>
+                </span>,
                 <span>{data.addr}</span>
+                <button onClick={ ()=>{ onDelete(data.id) } } >삭제</button>
             </div>
          ) }
 

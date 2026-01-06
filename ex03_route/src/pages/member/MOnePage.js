@@ -1,7 +1,7 @@
-import MOneCom from "../../components/member/MOneCom"
+import MOneCon from "../../containers/member/MOneCon"
 function MOnePage(){
     return (<>
-        <MOneCom />
+        <MOneCon />
     </>)
 }
 export default MOnePage;

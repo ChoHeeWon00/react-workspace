@@ -1,9 +1,10 @@
 import { useSearchParams } from "react-router-dom";
 
-function MOneCom(){
+function MOneCom( {user} ){
     //const arr = [10,20,30]
     //const [a,b] = arr;
     //console.log(a , b)
+    /*
     const member = [
         {id:1, name:"홍길동"},
         {id:2, name:"김개똥"},
@@ -14,10 +15,10 @@ function MOneCom(){
     let result = member.filter( mem => mem.id == p.get("id") )
     result = result[0]
     console.log( result )
-
+    */
     return (<>
-        아이디 : {result.id}<br></br>
-        이름 : {result['name']}<br></br>
+        아이디 : {user.id}<br></br>
+        이름 : {user['name']}<br></br>
     </>)
 }
 export default MOneCom;

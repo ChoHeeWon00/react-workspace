@@ -7,7 +7,18 @@ const initalRadio = [
 ]
 const QuizRadioCon = () => {
     const [age, setAge ] = useState( initalRadio )
-    const onChange = ( e ) => {}
+    const onChange = ( key ) => {
+        //console.log("key : ", key)
+        //const updateHobby = age.map(data => ({...data, isChecked: key === data.key}) )
+        const updateHobby = age.map(data => {
+            console.log("data : ", data);
+            console.log("key : ", key);
+            console.log("key === data.key : ", key === data.key);
+            console.log("--------------------")
+            return {...data, isChecked: key === data.key};
+        });
+        setAge( updateHobby );
+    }
     return (<><QuizRadioCom age={age} onChange={onChange}/></>)
 }
 export default QuizRadioCon;

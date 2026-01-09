@@ -5,8 +5,11 @@ let data_set = [
 ]
 //필터( data => data.name === 이름 )
 //export getList = () => data_set
+const path = "http://localhost:4000/mem";
 export function getList(){
-    return data_set;
+    const getData = fetch(path);
+    //return data_set;
+    return getData;
 }
 export const getOne = ( id ) => 
     data_set.filter( data => data.id === id )[0]

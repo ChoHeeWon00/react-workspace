@@ -1,6 +1,8 @@
 import { useReducer } from "react";
 import RegCom from "../components/RegCom";
 import { initalReg, initalState, reducer } from "../moduls/member_red";
+import { register } from "../service/member";
+import {useNavigate} from "react-router-dom";
 const RegCon = () => {
     const [state, dispatch] = useReducer(reducer, initalState);
     //{ id:"", pwd:"", name:"", addr:"" }
@@ -13,9 +15,28 @@ const RegCon = () => {
             type : "CHANGE_INPUT",
             value, name, form:"register" })
     }
-    console.log("reg : ", state)
+    const navigate = useNavigate();
+    const onSubmit = (e) => {
+        e.preventDefault();
+        //console.log(state)
+        dispatch({type:"LOADING"})
+        try{
+            //setTimeout(()=>{
+                const result = register(state.register);
+                if( result === 1) {//성공1, 실패 0
+                    //alert("회원가입 성공")
+                    navigate("/list")
+                }
+                dispatch({type:"FINISHED"})
+            //}, 1000 )
+            
+        }catch(error){
+            dispatch({type:"ERROR", msg:error.toString()})
+        }
+    }
     return (<>
-    <RegCom onChange={onChange} 
+    <RegCom loading={state.loadding} error={state.error}
+                onChange={onChange} onSubmit={onSubmit}
                 username={state.register.id}
                 pwd={state.register.pwd} 
                 name={state.register.name} 

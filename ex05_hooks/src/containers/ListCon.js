@@ -20,11 +20,11 @@ const ListCon = () => {
     useEffect( ()=> {
             dispatch({type:"LOADING"})
             try{
-                setTimeout(()=>{
+                //setTimeout(()=>{
                     const data = getList();
                     dispatch({type:"LIST", data })
                     dispatch({type:"FINISHED"})
-                },2000)
+                //},2000)
                 //throw new Error("에러 발생")
             }catch(e){
                 dispatch({type:"ERROR", msg: e.toString() })

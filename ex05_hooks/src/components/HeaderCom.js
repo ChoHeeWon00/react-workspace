@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom"
 const HeaderCom = ({onLogout, auth}) => {
+    //console.log("test : ",sessionStorage.getItem("test") )
     return (<>
         <Link to="/">HOME</Link> &nbsp;
         <Link to="/list">목록</Link> &nbsp;
@@ -13,7 +14,6 @@ const HeaderCom = ({onLogout, auth}) => {
             <Link to="/register">회원가입</Link> &nbsp;
             </>
         )}
-        
         <Link to="/context">context</Link> &nbsp;
         <hr></hr>
     </>)

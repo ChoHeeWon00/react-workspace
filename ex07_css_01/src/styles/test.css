@@ -1,6 +1,8 @@
 .test { color: aqua; }
-#test_id { font-size: 30px;
-
-    font-size: 30px;
-    background-color: beige;
+#test_id { 
+    width: 100px; height: 30px; margin-top: 10px;
+    border: none; border-radius: 5px;
+    font-size: 15px; font-weight: bold;
+    cursor: pointer; background-color: lightgray;
+    &:hover { background-color: gray; }
 }

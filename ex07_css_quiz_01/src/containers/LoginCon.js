@@ -25,7 +25,7 @@ const LoginCon = () => {
         navigate("/")
     }
     return (<>
-        <HeaderCom />
+       
         <LoginCom loading={loading} error={error} result={result} onSubmit={onSubmit} onChange={onChange} username={username} password={password} />
     </>)
 }

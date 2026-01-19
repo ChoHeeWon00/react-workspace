@@ -18,11 +18,12 @@ const RegCon = () => {
         const formData = new FormData(e.target)
         const userData = Object.fromEntries( formData.entries() )
         const {payload} = await dispatch( registerThunk(userData) )
+        // payload = { result : 0 }
+        console.log( payload )
         if( payload.result === 0 )
             navigate("/login")
     }
     return (<>
-        <HeaderCom />
         <RegCom onChange={onChange} onSubmit={onSubmit}
             username={username} password={password} role={role} />
     </>)    

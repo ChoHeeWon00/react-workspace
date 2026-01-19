@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
 import {useDispatch, useSelector} from "react-redux"
 import authSlice from "../../redux/authSlice";
+import { StyleContentBlock, StyleContentWrap } from "./StyleContent";
 const WrapBlock = styled.div`
     position: fixed; 
     z-index : 1;
@@ -44,6 +45,7 @@ const HeaderCom = () => {
                     <ul className="menu">
                         <li><Link to="/">사료</Link></li>
                         <li><Link to="/">간식</Link></li>
+                        <li><Link to="/list">목록보기</Link></li>
                     </ul>
                     <ul>
                         {isLoggedIn
@@ -60,6 +62,12 @@ const HeaderCom = () => {
                 </StyleNav>
             </StyleHeader>
         </WrapBlock>
+
+        <StyleContentBlock>
+            <StyleContentWrap>
+                <Outlet />
+            </StyleContentWrap>
+        </StyleContentBlock>
     </>)
 }
 export default HeaderCom;

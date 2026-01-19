@@ -4,15 +4,20 @@ const inputSlice = createSlice({
     initialState : {
         login : {username:"", password:""},
         register : {username:"", password:"", role:""},
+        modify : {username:"", password:"", role:""},
     },
     reducers : {
         changeInput : (state, action) => {
             const {form, name, value} = action.payload
             state[form][name] = value
+        },
+        setModifyData : (state, action) => {
+            console.log("action : ", action)
+            state.modify = action.payload;
         }
     }
 })
 //inputSlice.actions.changeInput()
 //changeInput()
-export const {changeInput} = inputSlice.actions;
+export const {changeInput, setModifyData} = inputSlice.actions;
 export default inputSlice;

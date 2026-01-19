@@ -5,8 +5,7 @@ import StyleInput from "./common/StyleInput"
 import StyleButton from "./common/StyleButton"
 const RegCom = ({onChange, onSubmit,username, password, role}) => {
     return (<>
-<StyleContentBlock>
-    <StyleContentWrap>
+
         <ProductTitle>회 원 가 입</ProductTitle>
         <StyleForm onSubmit={onSubmit} width="30%" >
             <StyleInput name="username" value={username} onChange={onChange} 
@@ -17,8 +16,7 @@ const RegCom = ({onChange, onSubmit,username, password, role}) => {
                                 placeholder="input role"/>
             <StyleButton>회원 가입</StyleButton>
         </StyleForm>
-    </StyleContentWrap>
-</StyleContentBlock>
+
     </>)    
 }
 export default RegCom;

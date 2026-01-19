@@ -22,3 +22,34 @@ export const registerThunk = createAsyncThunk(
     return { result : 0 }
   }
 );
+
+export const memberThunk = createAsyncThunk(
+  "memberThunk", 
+  async ( ) => {
+    return data_set;
+  }
+);
+export const memberOneThunk = createAsyncThunk(
+  "memberOneThunk", 
+  async ( user ) => { //{username : aaa}
+    console.log("one thunk : ", user )
+    const data = data_set.filter(d => d.username === user.username)[0]
+    console.log("one thunk data : ", data )
+    return data
+  }
+);
+export const memberDeleteThunk = createAsyncThunk(
+  "memberDeleteThunk", 
+  async ( user ) => { //{username : aaa}
+    data_set = data_set.filter( d => d.username !== user.username)
+    return 1;
+  }
+);
+export const memberModifyThunk = createAsyncThunk(
+  "memberModifyThunk", 
+  async ( user ) => { //{username : aaa}
+    data_set = data_set.filter( d => d.username !== user.username)
+    data_set = data_set.concat( user )
+    return 1;
+  }
+);
